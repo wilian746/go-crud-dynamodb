@@ -46,11 +46,6 @@ func (h *Handler) getOne(w http.ResponseWriter, r *http.Request) {
 
 	response, err := h.Controller.ListOne(ID)
 	if err != nil {
-		//if RepositoryResponse.ErrIsRecordNotFound(err) {
-		//	HttpStatus.StatusNotFound(w, r, err)
-		//	return
-		//}
-
 		HttpStatus.StatusInternalServerError(w, r, err)
 		return
 	}
@@ -98,11 +93,6 @@ func (h *Handler) Put(w http.ResponseWriter, r *http.Request) {
 	}
 
 	if err := h.Controller.Update(ID, productBody); err != nil {
-		//if RepositoryResponse.ErrIsRecordNotFound(err) {
-		//	HttpStatus.StatusNotFound(w, r, err)
-		//	return
-		//}
-
 		HttpStatus.StatusInternalServerError(w, r, errors.New("error when update"))
 		return
 	}
@@ -118,11 +108,6 @@ func (h *Handler) Delete(w http.ResponseWriter, r *http.Request) {
 	}
 
 	if err := h.Controller.Remove(ID); err != nil {
-		//if RepositoryResponse.ErrIsRecordNotFound(err) {
-		//	HttpStatus.StatusNotFound(w, r, err)
-		//	return
-		//}
-
 		HttpStatus.StatusInternalServerError(w, r, err)
 		return
 	}

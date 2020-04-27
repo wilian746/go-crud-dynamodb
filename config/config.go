@@ -1,7 +1,7 @@
 package config
 
 import (
-	"github.com/wilian746/go-crud-dynamodb/pkg/standart/utils/env"
+	"github.com/wilian746/go-crud-dynamodb/utils/env"
 	"strconv"
 )
 
@@ -14,7 +14,7 @@ type Config struct {
 
 func GetConfig() Config {
 	return Config{
-		Port:        parseEnvToInt("PORT", "8666"),
+		Port:        parseEnvToInt("PORT", "8080"),
 		Timeout:     parseEnvToInt("TIMEOUT", "30"),
 		Dialect:     env.GetEnv("DIALECT", "sqlite3"),
 		DatabaseURI: env.GetEnv("DATABASE_URI", ":memory:"),
