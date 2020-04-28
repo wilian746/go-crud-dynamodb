@@ -6,9 +6,9 @@ import (
 )
 
 type Config struct {
-	Port int
-	Timeout int
-	Dialect string
+	Port        int
+	Timeout     int
+	Dialect     string
 	DatabaseURI string
 }
 

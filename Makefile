@@ -4,6 +4,6 @@ fmt:
 	gofmt -w $(GOFMT_FILES)
 
 lint:
-	golangci-lint run -v -c .golangci.yml ./...
+	golangci-lint run -v ./...
 
 all: fmt lint

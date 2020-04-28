@@ -72,7 +72,7 @@ func (h *Handler) Post(w http.ResponseWriter, r *http.Request) {
 
 	ID, err := h.Controller.Create(productBody)
 	if err != nil {
-		HttpStatus.StatusInternalServerError(w, r, errors.New("error when create"))
+		HttpStatus.StatusInternalServerError(w, r, err)
 		return
 	}
 
@@ -93,7 +93,7 @@ func (h *Handler) Put(w http.ResponseWriter, r *http.Request) {
 	}
 
 	if err := h.Controller.Update(ID, productBody); err != nil {
-		HttpStatus.StatusInternalServerError(w, r, errors.New("error when update"))
+		HttpStatus.StatusInternalServerError(w, r, err)
 		return
 	}
 
